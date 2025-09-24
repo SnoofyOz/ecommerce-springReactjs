@@ -17,14 +17,12 @@ public class UserCommandService {
 
     public User create(User request) {
         UserEntity entity = userMapper.toEntity(request);
-        entity.setRole("USER");
         return userMapper.toDto(userRepository.save(entity));
     }
 
     public void updateUser(String id, User request) {
         UserEntity entity = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User not found"));
-        entity.setName(request.name());
         entity.setEmail(request.email());
         entity.setPassword(request.password());
         userMapper.toDto(userRepository.save(entity));

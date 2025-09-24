@@ -34,6 +34,8 @@ public class UserUseCaseService {
     public List<User> findAll(String code) {
         return queryService.findAll();
     }
+
+    @Transactional
     public void deleteUser(String id) {
         commandService.delete(id);
     }

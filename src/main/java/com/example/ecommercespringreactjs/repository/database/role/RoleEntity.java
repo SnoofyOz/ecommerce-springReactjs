@@ -19,5 +19,4 @@ public class RoleEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     String id;
     ERole name;
-
 }

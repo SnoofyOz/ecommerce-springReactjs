@@ -1,9 +1,9 @@
 package com.example.ecommercespringreactjs.controller.api.users;
 
-import com.example.ecommercespringreactjs.controller.api.users.models.user.UserModelMapper;
-import com.example.ecommercespringreactjs.controller.api.users.models.user.UserResponse;
+import com.example.ecommercespringreactjs.controller.api.users.models.UserModelMapper;
+import com.example.ecommercespringreactjs.controller.api.users.models.UserResponse;
 import com.example.ecommercespringreactjs.dto.user.User;
-import com.example.ecommercespringreactjs.controller.api.users.models.user.UserRequest;
+import com.example.ecommercespringreactjs.controller.api.users.models.UserRequest;
 import com.example.ecommercespringreactjs.dto.user.UserId;
 import com.example.ecommercespringreactjs.service.user.UserUseCaseService;
 import lombok.AccessLevel;
@@ -17,8 +17,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class UserController implements UserInterface {
-    final UserUseCaseService userUseCaseService;
-    final UserModelMapper userModelMapper;
+    UserUseCaseService userUseCaseService;
+    UserModelMapper userModelMapper;
 
 
     @Override
