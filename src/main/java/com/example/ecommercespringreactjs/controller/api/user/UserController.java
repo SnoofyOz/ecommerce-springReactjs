@@ -32,6 +32,7 @@ public class UserController implements UserInterface {
 
     @Override
     public User findById(String id) {
+
         return userUseCaseService.findById(new UserId(id));
     }
 
