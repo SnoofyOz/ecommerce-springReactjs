@@ -5,8 +5,8 @@ import com.example.ecommercespringreactjs.dto.user.User;
 import com.example.ecommercespringreactjs.repository.database.user.UserEntity;
 import com.example.ecommercespringreactjs.repository.database.user.UserMapper;
 import com.example.ecommercespringreactjs.repository.database.user.UserRepository;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,9 +14,12 @@ import org.springframework.stereotype.Service;
 public class UserCommandService {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
+    private final PasswordEncoder passwordEncoder;
 
     public User create(User request) {
         UserEntity entity = userMapper.toEntity(request);
+        String encodedPassword = passwordEncoder.encode(entity.getPassword());
+        entity.setPassword(encodedPassword);
         return userMapper.toDto(userRepository.save(entity));
     }
 

@@ -1,9 +1,12 @@
-import HomePage from "../pages/HomePage/HomePage";
-import NotFound from "../pages/NotFoundPage/NotFoundPage";
-import OrderPage from "../pages/OrderPage/OrderPage";
-import ProductsDetailPage from "../pages/ProductsDetailPage/ProductsDetailPage";
-import ProductsPage from "../pages/ProductsPage/ProductsPage";
-import TypeProductsPage from "../pages/TypeProductsPage/TypeProductsPage";
+import HomePage from "../pages/Home/Home.jsx";
+import Product from "../pages/Mn/Product.jsx";
+import User from "../pages/Mn/User.jsx";
+import ProductDetail from "../pages/Mn/ProductDetail.jsx";
+import UserDetail from "../pages/Mn/UserDetail.jsx";
+import Login from "../pages/SignInPage/SignInPage.jsx";
+import Register from "../pages/SignUpPage/SignUpPage.jsx";
+import SignInPage from "../pages/SignInPage/SignInPage.jsx";
+import SignUpPage from "../pages/SignUpPage/SignUpPage.jsx";
 
 export const routes = [
     {
@@ -12,28 +15,33 @@ export const routes = [
         isShowHeader: true
     },
     {
-        path: '/orders',
-        page: OrderPage,
-        isShowHeader: true
-    },
-    {
         path: '/products',
-        page: ProductsPage,
+        page: Product,
         isShowHeader: true
     },
     {
-        path: '/:type',
-        page: TypeProductsPage,
-        isShowHeader: true
-    },
-        {
-        path: '/product-detail',
-        page: ProductsDetailPage,
+        path: '/users',
+        page: User,
         isShowHeader: true
     },
     {
-        path: '/*',
-        page: NotFound,
-        isShowHeader: false
+        path: '/login',
+        page: SignInPage,
+        isShowHeader: true
+    },
+    {
+        path: '/register',
+        page: SignUpPage,
+        isShowHeader: true
+    },
+    {
+        path: '/products/:id',
+        page: ProductDetail,
+        isShowHeader: true
+    },
+    {
+        path: '/users/:id',
+        page: UserDetail,
+        isShowHeader: true
     }
 ]

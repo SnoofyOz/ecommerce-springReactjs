@@ -1,41 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-
-const App = () => {
-
-  const [groups, setGroups] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-
-    fetch('http://localhost:8080/v1/users')
-      .then(response => response.json())
-      .then(data => {
-        setGroups(data);
-        setLoading(false);
-      })
-  }, []);
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { routes } from './routes';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header/Header';
+function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <div className="App-intro">
-          <h2>JUG List</h2>
-          {groups.map(group =>
-            <div key={group.id}>
-              {group.name}
-            </div>
-          )}
-        </div>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          {routes.map((route, index) => {
+            const Page = route.page;
+            return (
+              <Route
+                key={index}
+                path={route.path}
+                element={<Page />}
+              />
+            );
+          })}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

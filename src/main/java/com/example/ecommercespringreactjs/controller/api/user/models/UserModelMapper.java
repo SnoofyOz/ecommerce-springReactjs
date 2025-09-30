@@ -1,4 +1,4 @@
-package com.example.ecommercespringreactjs.controller.api.users.models;
+package com.example.ecommercespringreactjs.controller.api.user.models;
 
 import com.example.ecommercespringreactjs.dto.user.User;
 import org.mapstruct.Mapper;

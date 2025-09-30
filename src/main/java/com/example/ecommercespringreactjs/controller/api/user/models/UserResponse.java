@@ -1,4 +1,4 @@
-package com.example.ecommercespringreactjs.controller.api.users.models;
+package com.example.ecommercespringreactjs.controller.api.user.models;
 
 public record UserResponse(
         String id,

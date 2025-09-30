@@ -1,8 +1,8 @@
-package com.example.ecommercespringreactjs.controller.api.users;
+package com.example.ecommercespringreactjs.controller.api.user;
 
-import com.example.ecommercespringreactjs.controller.api.users.models.UserResponse;
+import com.example.ecommercespringreactjs.controller.api.user.models.UserResponse;
 import com.example.ecommercespringreactjs.dto.user.User;
-import com.example.ecommercespringreactjs.controller.api.users.models.UserRequest;
+import com.example.ecommercespringreactjs.controller.api.user.models.UserRequest;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
